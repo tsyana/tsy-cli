@@ -1,0 +1,14 @@
+{
+  "name": "tsy-cli",
+  "version": "0.0.1",
+  "description": "A simple CLI for creating your projects",
+  "bin":{
+  	"tsy":"bin/tsy"
+  },
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "co": "^4.6.0",
+    "co-prompt": "^1.0.0",
+    "commander": "^2.9.0"
+  }
+}
