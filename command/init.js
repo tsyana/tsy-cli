@@ -2,11 +2,19 @@
 const exec = require('child_process').exec
 const co = require('co')
 const prompt = require('co-prompt')
+const multiline = prompt.multiline
 const config = require('../templates')
+const confirm = prompt.confirm
 const chalk = require('chalk')
 
 module.exports = () => {
     co(function*() {
+        let isUseAdmin = yield prompt(chalk.green('\0 ?') + chalk.bold('\0 use admin-lte?') + chalk.grey(' (Y/n) \0'))
+        if (isUseAdmin == 'y' || isUseAdmin == 'Y') {
+            console.log(chalk.bold('\0 use admin-lte') + chalk.cyan(' Yes \0'))
+        } else {
+            console.log(chalk.cyan('\0 N'))
+        }
         let tplName = yield prompt('Template name: ')
         let projectName = yield prompt('Project name: ')
         let gitUrl
